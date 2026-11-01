@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font-serif: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --color-gold: #b8913f;
+}
+
+body { @apply bg-stone-50 text-stone-900 antialiased; }
+
+.btn,
+.btn-gold,
+.btn-dark,
+.btn-line {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer;
+}
+.btn-gold { @apply bg-gold text-white hover:bg-amber-700; }
+.btn-dark { @apply bg-stone-900 text-white hover:bg-stone-700; }
+.btn-line { @apply border border-stone-300 hover:bg-stone-100; }
+.input { @apply w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-gold; }
