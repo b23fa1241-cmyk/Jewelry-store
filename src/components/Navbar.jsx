@@ -1,11 +1,9 @@
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
-import { useBuilder } from '../context/BuilderContext'
 
 export default function Navbar() {
   const { session, isAdmin, signOut } = useAuth()
-  const { items } = useBuilder()
   const { count } = useCart()
   const nav = useNavigate()
   const isHome = useLocation().pathname === '/'
@@ -20,7 +18,7 @@ export default function Navbar() {
           <nav className="order-last flex w-full gap-5 overflow-x-auto whitespace-nowrap pt-1 md:order-0 md:w-auto md:overflow-visible md:pt-0">
             <NavLink to="/products" className={link}>Бүтээгдэхүүн</NavLink>
             <NavLink to="/quiz" className={link}>Тест</NavLink>
-            <NavLink to="/builder" className={link}>Хослол бүтээх{items.length > 0 && ` (${items.length})`}</NavLink>
+            <NavLink to="/builder" className={link}>Хослол бүтээх</NavLink>
             {session && <NavLink to="/my-sets" className={link}>Миний хослол</NavLink>}
             {session && <NavLink to="/cart" className={link}>Сагс{count > 0 && ` (${count})`}</NavLink>}
             {isAdmin && <NavLink to="/admin" className={link}>Админ</NavLink>}
