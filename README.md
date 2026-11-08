@@ -1,8 +1,37 @@
-# Lumière Jewelry (SWE334 · Хамгаалалт-1)
-Quiz-ээр бүтээгдэхүүн санал болгож, иж бүрдэл (set) бүрдүүлдэг үнэт эдлэлийн дэлгүүр. React + Vite + Tailwind + Supabase.
-## Суулгах
-1. supabase.com дээр төсөл үүсгэнэ → SQL Editor дээр `supabase/schema.sql`, дараа нь `supabase/seed.sql` ажиллуулна.
-2. Authentication → Providers → Email дээр "Confirm email"-ийг local туршилтад унтрааж болно.
-3. `.env.example`-г `.env` болгож хуулаад Project Settings → API-аас URL, anon key-г бичнэ.
-4. `npm install` → `npm run dev` → http://localhost:5173
-5. Бүртгүүлсний дараа seed.sql-ийн доод талын UPDATE-ээр өөрийгөө admin болгоно.
+Lumière Jewelry
+
+1. Төслийн зорилго
+
+Lumière Jewelry нь хэрэглэгчийн хэв маяг, сонирхол, төсөвт тохирсон үнэт эдлэлийн бүтээгдэхүүнийг тест ашиглан санал болгодог онлайн дэлгүүр юм. Хэрэглэгч санал болгосон бүтээгдэхүүнүүдээс сонгон өөрийн хослолыг үүсгэх, хадгалах болон сагсанд нэмэх боломжтой.
+
+Ашигласан технологи: React, Vite, Tailwind CSS, React Router, Supabase.
+
+2. Суулгах заавар
+
+1. Төслийг татах
+
+git clone https://github.com/b23fa1241-cmyk/Jewelry-store.git
+cd Jewelry-store
+
+2. Supabase тохируулах
+
+Supabase дээр төсөл үүсгээд SQL Editor хэсэгт дараах файлуудыг дарааллаар ажиллуулна.
+
+supabase/schema.sql
+
+supabase/seed.sql
+
+3. Орчны хувьсагч тохируулах
+
+.env.example файлыг .env болгон хуулж, Supabase-ийн Project URL болон anon key-г тохируулна.
+
+4. Төслийг ажиллуулах
+
+npm install
+npm run dev
+
+Хөтөч дээр http://localhost:5173 хаягаар нээнэ.
+
+5. Админ эрх тохируулах
+
+Бүртгүүлсний дараа seed.sql файлын доод хэсэгт байгаа UPDATE query-д өөрийн имэйлийг тохируулж Supabase SQL Editor дээр ажиллуулна.
